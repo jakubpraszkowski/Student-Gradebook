@@ -6,7 +6,6 @@
 
 #include <utility>
 
-
 Student::Student(int _id, std::string _firstName, std::string _surname, std::string _university, int _score) {
     id = _id;
     firstName = std::move(_firstName);

@@ -10,6 +10,7 @@ GraduateStudent::GraduateStudent(int _id, std::string _firstName, std::string _s
 
 }
 
-double GraduateStudent::averageScore() const {
+double GraduateStudent::averageScore() {
+
     return 0;
 }

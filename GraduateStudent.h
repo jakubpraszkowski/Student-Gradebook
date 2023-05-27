@@ -13,7 +13,7 @@ class GraduateStudent :public Student{
 public:
     GraduateStudent(int _id, std::string _firstName, std::string _surname, std::string _university, int _score, std::string _supervisor, std::string _thesisTitle, int _thesisMark, int _thesisStatus, int _thesisYear);
     ~GraduateStudent() = default;
-    double averageScore() const override;
+    double averageScore() override;
 };
 
 
