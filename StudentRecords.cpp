@@ -5,31 +5,30 @@
 #include "StudentRecords.h"
 #include <iostream>
 
-void StudentRecords::printMarkWeight() {
-        for (auto &grade : markWeight) {
-        std::cout << grade.first << " " << grade.second << std::endl;
-    }
-}
 
-void StudentRecords::addStudentRecords(const std::string &studentName, const UndergraduateStudent &student,
-                                       const std::string &mark, double grade) {
-    double weight = markWeight[mark];
-    studentData[studentName] = {student, {mark, grade}};
+//std::pair<std::string, double> StudentRecords::getStudentGrade(const std::string &studentName) {
+//    return {};
+//}
+//
+//void StudentRecords::addStudentGrade(const std::string &studentName, const std::string &mark, double grade) {
+//    studentData[studentName] = std::make_pair(mark, grade);
+//}
 
-}
 
-std::pair<std::string, double> StudentRecords::getStudentGradeData(const std::string &studentName) {
-    auto it = studentData.find(studentName);
-    if (it != studentData.end()) {
-        return it->second.second;
-    }
-    return {"", 0.0};
-}
-
-double StudentRecords::getMarkWeight(const std::string &mark) {
-    auto it = markWeight.find(mark);
-    if (it != markWeight.end()) {
-        return it->second;
-    }
-    return 0.0;
-}
+//void StudentRecords::addStudentGrade(Student *student) {
+//    studentData[student] = std::unordered_map<std::string, double>();
+//    std::cout << "Enter number of grades: ";
+//    int numberOfGrades;
+//    std::cin >> numberOfGrades;
+//    for (int i = 0; i < numberOfGrades; ++i) {
+//        std::cout << "Enter grade: ";
+//        double grade;
+//        std::cin >> grade;
+//        std::cout << "Enter mark: ";
+//        std::string mark;
+//        std::cin >> mark;
+//        studentData[student][mark] = grade;
+//    }
+//    std::cout << std::endl;
+//
+//}

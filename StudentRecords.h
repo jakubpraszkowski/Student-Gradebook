@@ -13,20 +13,15 @@
 #include <string>
 
 class StudentRecords {
-    std::unordered_map<std::string, std::pair<UndergraduateStudent, std::pair<std::string, double>>> studentData;
-    std::unordered_map<std::string, double> markWeight {
-            {"Exam", 2.0},
-            {"Test", 1.0},
-            {"Project", 3.0},
-            {"Homework", 1.0}
-    };
+    //std::unordered_map<Student*, std::unordered_map<std::string, double>> studentData;
+    //std::unordered_map<std::string, std::pair<std::string, double>> studentData;
+
 public:
-    void addStudentRecords(const std::string& studentName, const UndergraduateStudent& student, const std::string& mark, double grade);
-    std::pair<std::string, double> getStudentGradeData(const std::string& studentName);
-    double getMarkWeight(const std::string& mark);
-    void printMarkWeight();
-
+//    void addStudentGrade(const std::string& studentName, const std::string& mark, double grade);
+//    std::pair<std::string, double> getStudentGrade(const std::string& studentName);
+    StudentRecords() = default;
+    ~StudentRecords() = default;
+    //void addStudentGrade(Student* student);
 };
-
 
 #endif //STUDENT_STUDENTRECORDS_H

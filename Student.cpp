@@ -1,10 +1,7 @@
-//
-// Created by kubuski on 26.05.23.
-//
-
 #include "Student.h"
-
 #include <utility>
+#include <iostream>
+
 
 Student::Student(int _id, std::string _firstName, std::string _surname, std::string _university, int _score) {
     id = _id;
@@ -14,3 +11,23 @@ Student::Student(int _id, std::string _firstName, std::string _surname, std::str
     score = _score;
 }
 
+void Student::printAllStudents() {
+    for (auto & student : students) {
+        student->print();
+    }
+}
+
+void Student::deleteAllStudents() {
+    for (auto & student : students) {
+        delete student;
+    }
+    students.clear();
+}
+
+void Student::addStudent(Student *student) {
+    students.push_back(student);
+}
+
+void Student::printStudent() const {
+    std::cout << "Student: " << firstName << " " << surname << " from " << university << " with id: " << id << " and score: " << score << std::endl;
+}

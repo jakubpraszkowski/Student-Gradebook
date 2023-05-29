@@ -1,7 +1,3 @@
-//
-// Created by kubuski on 26.05.23.
-//
-
 #include "UndergraduateStudent.h"
 
 UndergraduateStudent::UndergraduateStudent(int _id, std::string _firstName, std::string _surname,
@@ -48,10 +44,12 @@ void UndergraduateStudent::addStudent() {
     std::cin >> major;
     std::cout << "Enter specialization: ";
     std::cin >> specialization;
-    UndergraduateStudent(id, firstName, surname, university, score, yearOfStudy, numberOfCourses, major, specialization);
+    std::cout << std::endl;
+
+    auto *undergraduateStudent = new UndergraduateStudent(id, firstName, surname, university, score, yearOfStudy, numberOfCourses, major, specialization);
+    Student::addStudent(undergraduateStudent);
 }
 
 double UndergraduateStudent::averageScore() {
-
     return score;
 }
