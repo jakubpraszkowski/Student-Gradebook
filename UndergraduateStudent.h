@@ -4,7 +4,6 @@
 #include <iostream>
 #include <unordered_map>
 
-
 class UndergraduateStudent : public Student{
     int yearOfStudy, numberOfCourses;
     std::string major, specialization;
@@ -12,10 +11,8 @@ class UndergraduateStudent : public Student{
 public:
     UndergraduateStudent(int _id, std::string _firstName, std::string _surname, std::string _university, int _score, int _yearOfStudy, int _numberOfCourses, std::string _major, std::string _specialization);
     ~UndergraduateStudent() = default;
-    double averageScore() override;
-    void print() const override;
+    void showStudents() const override;
     void addStudent() override;
 };
-
 
 #endif //STUDENT_UNDERGRADUATESTUDENT_H

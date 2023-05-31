@@ -1,7 +1,3 @@
-//
-// Created by kubuski on 26.05.23.
-//
-
 #include <iostream>
 #include "GraduateStudent.h"
 
@@ -18,20 +14,6 @@ GraduateStudent::GraduateStudent(int _id, std::string _firstName, std::string _s
     thesisMark = _thesisMark;
     thesisStatus = _thesisStatus;
     thesisYear = _thesisYear;
-}
-
-double GraduateStudent::averageScore() {
-
-    return 0;
-}
-
-void GraduateStudent::print() const {
-    printStudent();
-    std::cout << "Supervisor: " << supervisor << std::endl;
-    std::cout << "Thesis title: " << thesisTitle << std::endl;
-    std::cout << "Thesis mark: " << thesisMark << std::endl;
-    std::cout << "Thesis status: " << thesisStatus << std::endl;
-    std::cout << "Thesis year: " << thesisYear << std::endl;
 }
 
 void GraduateStudent::addStudent() {
@@ -61,5 +43,10 @@ void GraduateStudent::addStudent() {
 
     auto *graduateStudent = new GraduateStudent(id, firstName, surname, university, score, supervisor,
                                                            thesisTitle, thesisMark, thesisStatus, thesisYear);
-    Student::addStudent(graduateStudent);
+    graduateStudents.push_back(*graduateStudent);
+    //delete graduateStudent;
+}
+
+void GraduateStudent::showStudents() const {
+    Student::showStudents();
 }

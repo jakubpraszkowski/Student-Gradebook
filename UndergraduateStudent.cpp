@@ -16,15 +16,6 @@ UndergraduateStudent::UndergraduateStudent(int _id, std::string _firstName, std:
 
 }
 
-void UndergraduateStudent::print() const {
-    std::cout << "Undergraduate student: " << firstName << " " << surname << " from " << university << " with id: " << id << " and score: " << score << std::endl;
-    std::cout << "Year of study: " << yearOfStudy << std::endl;
-    std::cout << "Number of courses: " << numberOfCourses << std::endl;
-    std::cout << "Major: " << major << std::endl;
-    std::cout << "Specialization: " << specialization << std::endl;
-
-}
-
 void UndergraduateStudent::addStudent() {
     std::cout << "Enter id: ";
     std::cin >> id;
@@ -50,6 +41,7 @@ void UndergraduateStudent::addStudent() {
     Student::addStudent(undergraduateStudent);
 }
 
-double UndergraduateStudent::averageScore() {
-    return score;
+void UndergraduateStudent::showStudents() const {
+    Student::showStudents();
+
 }
