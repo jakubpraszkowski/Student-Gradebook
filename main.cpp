@@ -1,10 +1,10 @@
-#include <iostream>
 #include "Student.h"
 #include "UndergraduateStudent.h"
 #include "GraduateStudent.h"
+#include <memory>
 
 int main() {
-    auto *student2 = new UndergraduateStudent(2, "Jane", "Doe", "MIT", 9, 1, 1, "Mathematics", "Algebra");
+    std::vector<std::unique_ptr<Student>> students;
 
     return 0;
 }

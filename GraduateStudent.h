@@ -10,8 +10,9 @@ class GraduateStudent :public Student {
 public:
     GraduateStudent(int _id, std::string _firstName, std::string _surname, std::string _university, int _score, std::string _supervisor, std::string _thesisTitle, int _thesisMark, int _thesisStatus, int _thesisYear);
     ~GraduateStudent() = default;
+    void printStudent() const override;
     void showStudents() const override;
-    void addStudent() override;
+    void addStudent2List() override;
 };
 
 #endif //STUDENT_GRADUATESTUDENT_H

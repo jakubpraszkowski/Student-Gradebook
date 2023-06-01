@@ -16,17 +16,32 @@ UndergraduateStudent::UndergraduateStudent(int _id, std::string _firstName, std:
 
 }
 
-void UndergraduateStudent::addStudent() {
-    std::cout << "Enter id: ";
-    std::cin >> id;
-    std::cout << "Enter first name: ";
-    std::cin >> firstName;
-    std::cout << "Enter surname: ";
-    std::cin >> surname;
-    std::cout << "Enter university: ";
-    std::cin >> university;
-    std::cout << "Enter score: ";
-    std::cin >> score;
+void UndergraduateStudent::addStudent2List() {
+    underText();
+    auto *undergraduateStudent = new UndergraduateStudent(id, firstName, surname, university, score, yearOfStudy, numberOfCourses, major, specialization);
+    undergraduateStudents.push_back(*undergraduateStudent);
+}
+
+void UndergraduateStudent::showStudents() const {
+    if(undergraduateStudents.empty()) {
+        std::cout << "No students to show" << std::endl;
+        return;
+    }
+    for (const auto & undergraduateStudent : undergraduateStudents) {
+        undergraduateStudent.printStudent();
+    }
+}
+
+void UndergraduateStudent::printStudent() const {
+    Student::printStudent();
+    std::cout << "Year of study: " << yearOfStudy << std::endl;
+    std::cout << "Number of courses: " << numberOfCourses << std::endl;
+    std::cout << "Major: " << major << std::endl;
+    std::cout << "Specialization: " << specialization << std::endl;
+}
+
+void UndergraduateStudent::underText() {
+    addStudentU();
     std::cout << "Enter year of study: ";
     std::cin >> yearOfStudy;
     std::cout << "Enter number of courses: ";
@@ -36,12 +51,4 @@ void UndergraduateStudent::addStudent() {
     std::cout << "Enter specialization: ";
     std::cin >> specialization;
     std::cout << std::endl;
-
-    auto *undergraduateStudent = new UndergraduateStudent(id, firstName, surname, university, score, yearOfStudy, numberOfCourses, major, specialization);
-    Student::addStudent(undergraduateStudent);
-}
-
-void UndergraduateStudent::showStudents() const {
-    Student::showStudents();
-
 }

@@ -16,20 +16,8 @@ GraduateStudent::GraduateStudent(int _id, std::string _firstName, std::string _s
     thesisYear = _thesisYear;
 }
 
-void GraduateStudent::addStudent() {
-    int id, score, thesisMark, thesisStatus, thesisYear;
-    std::string firstName, surname, university, supervisor, thesisTitle;
-
-    std::cout << "Enter id: ";
-    std::cin >> id;
-    std::cout << "Enter first name: ";
-    std::cin >> firstName;
-    std::cout << "Enter surname: ";
-    std::cin >> surname;
-    std::cout << "Enter university: ";
-    std::cin >> university;
-    std::cout << "Enter score: ";
-    std::cin >> score;
+void GraduateStudent::addStudent2List() {
+    addStudentU();
     std::cout << "Enter supervisor: ";
     std::cin >> supervisor;
     std::cout << "Enter thesis title: ";
@@ -41,12 +29,27 @@ void GraduateStudent::addStudent() {
     std::cout << "Enter thesis year: ";
     std::cin >> thesisYear;
 
-    auto *graduateStudent = new GraduateStudent(id, firstName, surname, university, score, supervisor,
+    auto graduateStudent = new GraduateStudent(id, firstName, surname, university, score, supervisor,
                                                            thesisTitle, thesisMark, thesisStatus, thesisYear);
     graduateStudents.push_back(*graduateStudent);
-    //delete graduateStudent;
+    delete graduateStudent;
 }
 
 void GraduateStudent::showStudents() const {
-    Student::showStudents();
+    if(graduateStudents.empty()) {
+        std::cout << "No students to show" << std::endl;
+        return;
+    }
+    for (const auto & graduateStudent : graduateStudents) {
+        graduateStudent.printStudent();
+    }
+}
+
+void GraduateStudent::printStudent() const {
+    Student::printStudent();
+    std::cout << "Supervisor: " << supervisor << std::endl;
+    std::cout << "Thesis title: " << thesisTitle << std::endl;
+    std::cout << "Thesis mark: " << thesisMark << std::endl;
+    std::cout << "Thesis status: " << thesisStatus << std::endl;
+    std::cout << "Thesis year: " << thesisYear << std::endl;
 }
